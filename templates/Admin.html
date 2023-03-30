@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SMART DIAGNOSIS SIGN</title>
+  <link rel="stylesheet" href="{% static 'css./style admin.css' %}">
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+            <!-- login Doctor_ASS -->
+
+      <div class="container a-container" id="a-container">
+        <form class="form" id="a-form" method="POST" action="">
+          <img src=" {% static 'img/Dr_Assisnt.png' %}" style="height: 100px; width: 100px;">
+          <h2 class="form_title title">DR_Assient</h2>
+          
+          <input id="id_DR_ass" class="form__input" type="email" name="email_dr_ass"  placeholder="Enter Email">
+          <input id="pass_DR_ass" class="form__input" type="password" name="pass_DR_ass" placeholder="Enter Password">
+
+          <a class="form__link">Forgot your password?</a>
+          <br>
+          <a href="{% url 'Dr_assint' %}">
+            <button type="button" id="submit_DR" class="custom-btn btn-9" >SIGN IN</button>
+          </a>
+        </form>
+      </div>
+      <!-- login Doctor -->
+      <div class="container b-container" id="b-container">
+        <form class="form" id="b-form" method="" action="">
+          <img src="{% static 'img/Doctor.png' %}" style="height: 100px; width: 100px;">
+          <h2 class="form_title title">Doctor</h2>
+          <input id="id_DR" class="form__input" type="email" name="email_DR" placeholder="Enter Email">
+          <input id="pass_DR" class="form__input" type="password"  name="pass_DR"  placeholder="Enter Password"><a class="form__link">Forgot your password?</a>
+          <a href="{% url 'Doctor' %}">
+            <button type="button" id="submit_DR" class="custom-btn btn-9" >SIGN IN</button>
+          </a>
+        </form>
+      </div>
+      <div class="switch" id="switch-cnt">
+        <div class="switch__circle"></div>
+        <div class="switch__circle switch__circle--t"></div>
+        <div class="switch__container" id="switch-c1">
+          <h2 class="switch__title title"> Doctor log in!</h2>
+          <p class="switch__description description">Click here to login to the Doctor</p>
+          <button class="switch__button button switch-btn custom-btn btn-9">Login</button>
+        </div>
+        <div class="switch__container is-hidden" id="switch-c2">
+          <h2 class="switch__title title">DR_Assient    login!</h2>
+          <p class="switch__description description">Click here to login to the DR_Assient</p>
+          <button class="switch__button button switch-btn custom-btn btn-9">Login</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="main.js"></script>
+    
+  </body>
+</html>
+<!-- partial -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  import {getDatabase, ref, set, onValue, push,child,update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+ 
+         // TODO: Add SDKs for Firebase products that you want to use
+         // https://firebase.google.com/docs/web/setup#available-libraries
+ 
+         // Your web app's Firebase configuration
+         const firebaseConfig = {
+             // Your configurations here
+             apiKey: "AIzaSyCb5_XWFevGqghU_WD59kpjfXPaxCTD0Uo",
+     authDomain: "asder-accce.firebaseapp.com",
+     projectId: "asder-accce",
+     storageBucket: "asder-accce.appspot.com",
+     messagingSenderId: "942615118447",
+     appId: "1:942615118447:web:3e39d7036b49a2c353c39a"
+         };
+ 
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   
+   // Get a reference to the database service
+   const database = getDatabase(app);
+ 
+   submit_DR_ass.addEventListener('click', (e) => {
+ 
+              var Note = document.getElementById("id_DR_ass").value;
+              var namep = document.getElementById("name").value;
+              // var age = document.getElementById("age").value;
+              // var genbox = document.getElementById("radio1").value;
+
+ 
+        
+        
+              const userId = push(child(ref(database), 'users')).key;
+
+         
+             set(ref(database, "pat/Diagnosis_result/"+ userId),{
+             Note:Note,
+            //  namep: namep,
+            //  age:age,
+            //  genbox:genbox,
+         
+         }).then(() => {
+             // Data saved successfully!
+             alert('data submitted');
+         })
+             .catch((error) => {
+                 // The write failed...
+                 alert(error);
+             });
+ 
+   });
+
+   submit_DR_ass.addEventListener('click', (e) => {
+ 
+ var Note = document.getElementById("note").value;
+ // var namep = document.getElementById("name").value;
+ // var age = document.getElementById("age").value;
+ // var genbox = document.getElementById("radio1").value;
+
+
+
+
+ const userId = push(child(ref(database), 'users')).key;
+
+
+set(ref(database, "pat/Diagnosis_result/"+ userId),{
+Note:Note,
+//  namep: namep,
+//  age:age,
+//  genbox:genbox,
+
+}).then(() => {
+// Data saved successfully!
+alert('data submitted');
+})
+.catch((error) => {
+    // The write failed...
+    alert(error);
+});
+
+});
+
+</script> 
+
+  <script  src="{% static 'js/script admin.js' %}"></script>
+
+</body>
+</html>
