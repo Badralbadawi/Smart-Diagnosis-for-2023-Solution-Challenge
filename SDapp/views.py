@@ -12,14 +12,15 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import pyrebase
-config={
-    "apiKey": "AIzaSyCxiRCgCSGIvWkikmsfDZSbrAhTOWhXzes",
-  "authDomain": "testwebdb-e945b.firebaseapp.com",
-  "databaseURL": "https://testwebdb-e945b-default-rtdb.firebaseio.com",
- "projectId": "testwebdb-e945b",
-  "storageBucket": "testwebdb-e945b.appspot.com",
-  "messagingSenderId": "630717476883",
-  "appId": "1:630717476883:web:bf7ae9fc2d5352b93d0fe6"
+config={ 
+    "apiKey": "AIzaSyCGo_C2UnProWBNL-gZ_GQ53p8v4tE-pMg",
+  "authDomain": "smart-diagnosis-5e9c4.firebaseapp.com",
+  "databaseURL": "https://smart-diagnosis-5e9c4-default-rtdb.firebaseio.com",
+  "projectId": "smart-diagnosis-5e9c4",
+  "storageBucket": "smart-diagnosis-5e9c4.appspot.com",
+  "messagingSenderId": "133206915611",
+  "appId": "1:133206915611:web:7395a05daede973b0516be",
+  "measurementId": "G-27E4K8D6B4"
 }
 firebase=pyrebase.initialize_app(config)
 authe = firebase.auth()
