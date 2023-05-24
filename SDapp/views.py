@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pyrebase
 config={ 
-    "apiKey": "AIzaSyCGo_C2UnProWBNL-gZ_GQ53p8v4tE-pMg",
+  "apiKey": "AIzaSyCGo_C2UnProWBNL-gZ_GQ53p8v4tE-pMg",
   "authDomain": "smart-diagnosis-5e9c4.firebaseapp.com",
   "databaseURL": "https://smart-diagnosis-5e9c4-default-rtdb.firebaseio.com",
   "projectId": "smart-diagnosis-5e9c4",
@@ -21,6 +21,7 @@ config={
   "messagingSenderId": "133206915611",
   "appId": "1:133206915611:web:7395a05daede973b0516be",
   "measurementId": "G-27E4K8D6B4"
+
 }
 firebase=pyrebase.initialize_app(config)
 authe = firebase.auth()
