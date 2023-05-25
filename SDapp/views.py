@@ -13,14 +13,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pyrebase
 config={ 
-  "apiKey": "AIzaSyCGo_C2UnProWBNL-gZ_GQ53p8v4tE-pMg",
-  "authDomain": "smart-diagnosis-5e9c4.firebaseapp.com",
-  "databaseURL": "https://smart-diagnosis-5e9c4-default-rtdb.firebaseio.com",
-  "projectId": "smart-diagnosis-5e9c4",
-  "storageBucket": "smart-diagnosis-5e9c4.appspot.com",
-  "messagingSenderId": "133206915611",
-  "appId": "1:133206915611:web:7395a05daede973b0516be",
-  "measurementId": "G-27E4K8D6B4"
+  'apiKey': "AIzaSyBIxUg62G_jDjf7WEHCf8DshCFKiC91YNs",
+  'authDomain': "smart-82331.firebaseapp.com",
+  'databaseURL': "https://smart-82331-default-rtdb.firebaseio.com",
+  'projectId': "smart-82331",
+  'storageBucket': "smart-82331.appspot.com",
+ ' messagingSenderId': "421241580073",
+  'appId': "1:421241580073:web:b867857ae1b809a3e74a38"    
 
 }
 firebase=pyrebase.initialize_app(config)
